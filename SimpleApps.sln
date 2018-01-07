@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcWpfMvvm", "WcWpfMvvm\WcWpfMvvm.csproj", "{09D64D83-C3A6-443D-AF75-2A950796E451}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcWpfMvc", "WcWpfMvc\WcWpfMvc.csproj", "{F04819FC-39C8-41C6-BB0E-BAF92662C9F9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{09D64D83-C3A6-443D-AF75-2A950796E451}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{09D64D83-C3A6-443D-AF75-2A950796E451}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{09D64D83-C3A6-443D-AF75-2A950796E451}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F04819FC-39C8-41C6-BB0E-BAF92662C9F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F04819FC-39C8-41C6-BB0E-BAF92662C9F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F04819FC-39C8-41C6-BB0E-BAF92662C9F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F04819FC-39C8-41C6-BB0E-BAF92662C9F9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
