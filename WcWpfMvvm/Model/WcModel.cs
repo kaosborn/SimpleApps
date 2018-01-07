@@ -3,7 +3,7 @@ using System.Collections.ObjectModel;
 
 namespace AppModel
 {
-    public class WcModel
+    public class WcModel : Observable
     {
         static private readonly char[] delimiters = new char[] {' ', '\t', '\r', '\n' };
         private readonly ObservableCollection<string> history;

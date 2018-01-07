@@ -7,7 +7,7 @@ using AppModel;
 
 namespace AppViewModel
 {
-    public class WcPresenter : ObservableObject
+    public class WcPresenter : WcModel
     {
         public WcModel WordCounter { get; private set; }
 

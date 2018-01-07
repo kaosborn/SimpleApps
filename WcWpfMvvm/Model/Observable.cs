@@ -1,14 +1,13 @@
-﻿// SimpleApps / WcWpfMvvm / ObservableObject.cs
+﻿// SimpleApps / WcWpfMvc / Observable.cs
 //
-// This ViewModel file is overhead to any WPF MVVM application
-// and should never need to be modified.
+// This file should never need to be modified.
 //
 
 using System.ComponentModel;
 
-namespace AppViewModel
+namespace AppModel
 {
-    public abstract class ObservableObject : INotifyPropertyChanged
+    public abstract class Observable : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
