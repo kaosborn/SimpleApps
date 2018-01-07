@@ -1,4 +1,10 @@
-﻿using System;
+﻿// SimpleApps / WcWpfMvvm / DelegateCommand.cs
+//
+// This ViewModel file is overhead to any WPF MVVM application
+// and should never need to be modified.
+//
+
+using System;
 using System.Windows.Input;
 
 namespace AppViewModel

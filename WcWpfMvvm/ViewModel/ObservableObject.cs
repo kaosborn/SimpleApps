@@ -1,4 +1,10 @@
-﻿using System.ComponentModel;
+﻿// SimpleApps / WcWpfMvvm / ObservableObject.cs
+//
+// This ViewModel file is overhead to any WPF MVVM application
+// and should never need to be modified.
+//
+
+using System.ComponentModel;
 
 namespace AppViewModel
 {
