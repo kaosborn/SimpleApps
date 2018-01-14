@@ -4,7 +4,7 @@
 using System;
 using System.Windows.Input;
 using AppModel;
-using Kaos.Mvvw;
+using Kaos.Mvvm;
 
 namespace AppViewModel
 {

@@ -1,4 +1,4 @@
-﻿// SimpleApps / Mvvw / RelayCommand.cs
+﻿// SimpleApps / Mvvm / RelayCommand.cs
 //
 // This framework file is overhead to any WPF MVVM application
 // and should never need to be modified.
@@ -7,7 +7,7 @@
 using System;
 using System.Windows.Input;
 
-namespace Kaos.Mvvw
+namespace Kaos.Mvvm
 {
     public class RelayCommand : ICommand
     {
@@ -15,7 +15,7 @@ namespace Kaos.Mvvw
 
         public RelayCommand (Action action) => this.action = action;
 
-        public void Execute (object parameter) => this.action ();
+        public void Execute (object parameter) => this.action();
 
         public bool CanExecute (object parameter) => true;
 
