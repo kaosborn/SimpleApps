@@ -62,7 +62,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Model\Observable.cs" />
+    <Compile Include="Mvvw\Observable.cs" />
     <Compile Include="Model\WcModel.cs" />
     <Compile Include="Mvvw\RelayCommand.cs" />
     <Compile Include="ViewModel\WcPresenter.cs" />
