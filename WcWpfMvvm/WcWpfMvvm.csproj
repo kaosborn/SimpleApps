@@ -64,7 +64,7 @@
     </Compile>
     <Compile Include="Model\Observable.cs" />
     <Compile Include="Model\WcModel.cs" />
-    <Compile Include="ViewModel\DelegateCommand.cs" />
+    <Compile Include="Mvvw\RelayCommand.cs" />
     <Compile Include="ViewModel\WcPresenter.cs" />
     <Compile Include="View\WcWindow.xaml.cs">
       <DependentUpon>WcWindow.xaml</DependentUpon>

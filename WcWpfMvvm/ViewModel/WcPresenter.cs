@@ -4,6 +4,7 @@
 using System;
 using System.Windows.Input;
 using AppModel;
+using Kaos.Mvvw;
 
 namespace AppViewModel
 {
@@ -34,7 +35,7 @@ namespace AppViewModel
 
         public ICommand DoCountCommand
         {
-            get { return new DelegateCommand (CountWords); }
+            get { return new RelayCommand (CountWords); }
         }
 
         private void CountWords()
