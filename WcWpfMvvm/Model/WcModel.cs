@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using Kaos.Mvvm.AppModel;
 
 namespace AppModel
 {

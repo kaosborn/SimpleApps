@@ -1,11 +1,11 @@
-﻿// SimpleApps / WcWpfMvc / Observable.cs
+﻿// SimpleApps / Kaos.Mvvm.AppModel / Observable.cs
 //
 // This file should never need to be modified.
 //
 
 using System.ComponentModel;
 
-namespace AppModel
+namespace Kaos.Mvvm.AppModel
 {
     public abstract class Observable : INotifyPropertyChanged
     {
