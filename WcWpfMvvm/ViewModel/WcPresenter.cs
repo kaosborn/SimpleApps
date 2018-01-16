@@ -13,8 +13,8 @@ namespace AppViewModel
     {
         public event EventHandler UpdateVM;
 
-        private WcModel WordCounter;
-        public WcModelBind WC { get { return WordCounter.Bind; } }
+        private WcModel model;
+        public WcModelBind WC { get { return model.Bind; } }
 
         // Transient inputs like this do not belong in the model.
         private string input = String.Empty;
@@ -30,7 +30,7 @@ namespace AppViewModel
 
         public WcPresenter (WcModel model)
         {
-            this.WordCounter = model;
+            this.model = model;
             this.InputLine = String.Empty;
         }
 
@@ -45,7 +45,7 @@ namespace AppViewModel
                 UpdateVM (this, EventArgs.Empty);
 
             if (! String.IsNullOrWhiteSpace (InputLine))
-                WordCounter.Parse (InputLine);
+                model.Parse (InputLine);
             InputLine = String.Empty;
         }
     }
