@@ -11,4 +11,4 @@ using System.Windows;
 [assembly: AssemblyTrademark ("freeware")]
 [assembly: ComVisible (false)]
 [assembly: ThemeInfo (ResourceDictionaryLocation.None, ResourceDictionaryLocation.SourceAssembly)]
-[assembly: AssemblyVersion ("0.1.2.0")]
+[assembly: AssemblyVersion ("0.1.3.0")]
