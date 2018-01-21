@@ -11,12 +11,10 @@ namespace AppViewModel
 {
     public class WcPresenter : Observable
     {
-        public event EventHandler UpdateVM;
-
         private WcModel model;
         public WcModelBind WC { get { return model.Bind; } }
 
-        // Transient inputs like this do not belong in the model.
+        // Transient inputs like this belong here and not in the model.
         private string input = String.Empty;
         public string InputLine
         {
@@ -36,16 +34,14 @@ namespace AppViewModel
 
         public ICommand DoCountCommand
         {
-            get { return new RelayCommand (CountWords); }
+            get { return new RelayCommand<object> (CountWords); }
         }
 
-        private void CountWords()
+        private void CountWords (object arg1)
         {
-            if (UpdateVM != null)
-                UpdateVM (this, EventArgs.Empty);
-
-            if (! String.IsNullOrWhiteSpace (InputLine))
-                model.Parse (InputLine);
+            var inLine = (string) arg1;
+            if (! String.IsNullOrWhiteSpace (inLine))
+                model.Parse (inLine);
             InputLine = String.Empty;
         }
     }

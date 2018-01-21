@@ -7,13 +7,13 @@
         xmlns:View="clr-namespace:AppView"
         xmlns:ViewModel="clr-namespace:AppViewModel"
         mc:Ignorable="d"
-        Focusable="True"
-        Name="mainWin"
         Title="Word Counter (WPF-MVVM)" Height="240" Width="360" Loaded="WcController_Loaded">
-    <DockPanel Margin="5">
+    <Window.Resources>
+    </Window.Resources>
+    <DockPanel Margin="5" FocusManager.FocusedElement="{Binding ElementName=inBox}">
         <Label DockPanel.Dock="Top">Input:</Label>
         <TextBox Name="inBox" Text="{Binding InputLine, UpdateSourceTrigger=Explicit}"  DockPanel.Dock="Top"/>
-        <Button Name="countBtn" IsDefault="True" Background="Blue" Command="{Binding DoCountCommand}" CommandParameter="{Binding ElementName=inBox, Path=Text}" DockPanel.Dock="Top" Margin="5" HorizontalAlignment="Left">Parse</Button>
+        <Button IsDefault="True" Command="{Binding DoCountCommand}" CommandParameter="{Binding ElementName=inBox, Path=Text}" DockPanel.Dock="Top" Margin="5" HorizontalAlignment="Left">Count words</Button>
         <Label DockPanel.Dock="Top">History:</Label>
         <ListBox ItemsSource="{Binding WC.History}"/>
     </DockPanel>
