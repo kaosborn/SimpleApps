@@ -6,10 +6,11 @@ using minimalist applications.
 Architectures demonstrated:
 
 * MVVM in a WPF appliation
-* MVC in a WPF application [TODO]
+* MVC in a WPF application
 * MVC in a console application [TODO]
 
-These are trivial applications for demonstration purposes.
+These are trivial applications for demonstration purposes yet they show
+best known methods that may server as a basis for larger programs.
 
 ### Build
 
