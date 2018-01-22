@@ -13,6 +13,7 @@
     <DockPanel Margin="5" FocusManager.FocusedElement="{Binding ElementName=inBox}">
         <Label DockPanel.Dock="Top">Input:</Label>
         <TextBox Name="inBox" Text="{Binding InputLine, UpdateSourceTrigger=Explicit}"  DockPanel.Dock="Top"/>
+        <Button Command="{Binding DoClear}" DockPanel.Dock="Top" Margin="5" HorizontalAlignment="Left">Clear</Button>
         <Button IsDefault="True" Command="{Binding DoCountCommand}" CommandParameter="{Binding ElementName=inBox, Path=Text}" DockPanel.Dock="Top" Margin="5" HorizontalAlignment="Left">Count words</Button>
         <Label DockPanel.Dock="Top">History:</Label>
         <ListBox ItemsSource="{Binding WC.History}"/>

@@ -28,6 +28,11 @@ namespace AppModel
             this.Bind = new WcModelBind (this);
         }
 
+        public void ClearResults()
+        {
+            history.Clear();
+        }
+
         public int Parse (string text)
         {
             int count = text.Split (delimiters, StringSplitOptions.RemoveEmptyEntries).Length; 

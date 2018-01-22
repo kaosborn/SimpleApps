@@ -30,14 +30,17 @@ namespace AppViewModel
         {
             this.model = model;
             this.InputLine = String.Empty;
+            this.DoClear = new RelayCommand (() => model.ClearResults(), p => model.Bind.History.Count > 0);
         }
+
+        public ICommand DoClear { get; private set; }
 
         public ICommand DoCountCommand
         {
-            get { return new RelayCommand<object> (CountWords); }
+            get { return new RelayCommand<string> (CountWords); }
         }
 
-        private void CountWords (object arg1)
+        private void CountWords (string arg1)
         {
             var inLine = (string) arg1;
             if (! String.IsNullOrWhiteSpace (inLine))
