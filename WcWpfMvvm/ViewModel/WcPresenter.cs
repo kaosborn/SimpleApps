@@ -31,21 +31,20 @@ namespace AppViewModel
             this.model = model;
             this.InputLine = String.Empty;
             this.DoClear = new RelayCommand (() => model.ClearResults(), p => model.Bind.History.Count > 0);
+            this.DoCount = new RelayCommand<string> (a => CountWords (a));
         }
 
         public ICommand DoClear { get; private set; }
 
-        public ICommand DoCountCommand
-        {
-            get { return new RelayCommand<string> (CountWords); }
-        }
+        public ICommand DoCount { get; private set; }
 
-        private void CountWords (string arg1)
+        private void CountWords (string line)
         {
-            var inLine = (string) arg1;
-            if (! String.IsNullOrWhiteSpace (inLine))
-                model.Parse (inLine);
-            InputLine = String.Empty;
+            if (! String.IsNullOrWhiteSpace (line))
+            {
+                model.Parse (line);
+                InputLine = String.Empty;
+            }
         }
     }
 }
