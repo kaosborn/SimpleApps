@@ -5,7 +5,6 @@ using System;
 using System.Windows.Input;
 using AppModel;
 using Kaos.Mvvm;
-using Kaos.Mvvm.AppModel;
 
 namespace AppViewModel
 {

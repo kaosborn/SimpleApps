@@ -5,7 +5,7 @@
 
 using System.ComponentModel;
 
-namespace Kaos.Mvvm.AppModel
+namespace Kaos.Mvvm
 {
     public abstract class Observable : INotifyPropertyChanged
     {
