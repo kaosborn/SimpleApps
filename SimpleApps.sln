@@ -1,13 +1,29 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.16
+VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcWpfMvvm", "WcWpfMvvm\WcWpfMvvm.csproj", "{09D64D83-C3A6-443D-AF75-2A950796E451}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcWpfMvc", "WcWpfMvc\WcWpfMvc.csproj", "{F04819FC-39C8-41C6-BB0E-BAF92662C9F9}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{035A315D-F175-4F35-B8DB-FCFF97E29062}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "AppModel", "Source\AppModel\AppModel.shproj", "{AA0186DC-358A-465E-8294-E642D2635787}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "AppViewModel", "Source\AppViewModel\AppViewModel.shproj", "{F25FF377-C3EB-45F0-B8C7-850C6FF5802A}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Mvvm", "Source\Mvvm\Mvvm.shproj", "{A147DBE5-A615-48EE-8A8A-F23220F5CEC8}"
+EndProject
 Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Source\AppModel\AppModel.projitems*{09d64d83-c3a6-443d-af75-2a950796e451}*SharedItemsImports = 4
+		Source\AppViewModel\AppViewModel.projitems*{09d64d83-c3a6-443d-af75-2a950796e451}*SharedItemsImports = 4
+		Source\Mvvm\Mvvm.projitems*{09d64d83-c3a6-443d-af75-2a950796e451}*SharedItemsImports = 4
+		Source\Mvvm\Mvvm.projitems*{a147dbe5-a615-48ee-8a8a-f23220f5cec8}*SharedItemsImports = 13
+		Source\AppModel\AppModel.projitems*{aa0186dc-358a-465e-8294-e642d2635787}*SharedItemsImports = 13
+		Source\AppViewModel\AppViewModel.projitems*{f25ff377-c3eb-45f0-b8c7-850c6ff5802a}*SharedItemsImports = 13
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -24,6 +40,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AA0186DC-358A-465E-8294-E642D2635787} = {035A315D-F175-4F35-B8DB-FCFF97E29062}
+		{F25FF377-C3EB-45F0-B8C7-850C6FF5802A} = {035A315D-F175-4F35-B8DB-FCFF97E29062}
+		{A147DBE5-A615-48EE-8A8A-F23220F5CEC8} = {035A315D-F175-4F35-B8DB-FCFF97E29062}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {29569D76-3C0A-4251-BD40-6B0B658DA091}

@@ -62,10 +62,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Mvvm\Observable.cs" />
-    <Compile Include="Model\WcModel.cs" />
-    <Compile Include="Mvvm\RelayCommand.cs" />
-    <Compile Include="ViewModel\WcPresenter.cs" />
     <Compile Include="View\WcWindow.xaml.cs">
       <DependentUpon>WcWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -98,5 +94,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup />
+  <Import Project="..\Source\Mvvm\Mvvm.projitems" Label="Shared" />
+  <Import Project="..\Source\AppViewModel\AppViewModel.projitems" Label="Shared" />
+  <Import Project="..\Source\AppModel\AppModel.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
