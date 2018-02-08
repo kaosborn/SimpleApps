@@ -3,16 +3,13 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:AppView"
-        xmlns:View="clr-namespace:AppView"
-        xmlns:ViewModel="clr-namespace:AppViewModel"
         mc:Ignorable="d"
         Title="Word Counter (WPF-MVVM)" Height="240" Width="360" Loaded="WcController_Loaded">
     <Window.Resources>
     </Window.Resources>
     <DockPanel Margin="5" FocusManager.FocusedElement="{Binding ElementName=inBox}">
         <Label DockPanel.Dock="Top">Input:</Label>
-        <TextBox Name="inBox" Text="{Binding InputLine, UpdateSourceTrigger=Explicit}"  DockPanel.Dock="Top"/>
+        <TextBox Name="inBox" Text="{Binding InputLine, UpdateSourceTrigger=Explicit}" DockPanel.Dock="Top"/>
         <Button Command="{Binding DoClear}" DockPanel.Dock="Top" Margin="5" HorizontalAlignment="Left">Clear</Button>
         <Button Command="{Binding DoCount}" CommandParameter="{Binding ElementName=inBox, Path=Text}" IsDefault="True" DockPanel.Dock="Top" Margin="5" HorizontalAlignment="Left">Count words</Button>
         <Label DockPanel.Dock="Top">History:</Label>
