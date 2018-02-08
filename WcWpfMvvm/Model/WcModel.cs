@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.ObjectModel;
-using Kaos.Mvvm.AppModel;
 
 namespace AppModel
 {
     // Here is the portion of the model suitable for data binding.
-    public class WcModelBind : Observable
+    public class WcModelBind
     {
         public ReadOnlyObservableCollection<string> History { get; private set; }
 
