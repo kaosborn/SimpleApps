@@ -15,6 +15,8 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "AppViewModel", "Source\AppV
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Mvvm", "Source\Mvvm\Mvvm.shproj", "{A147DBE5-A615-48EE-8A8A-F23220F5CEC8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcMvvm461", "WcMvvm461\WcMvvm461.csproj", "{B2B4C754-C941-4C6B-AC42-BF4474298146}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		Source\AppModel\AppModel.projitems*{09d64d83-c3a6-443d-af75-2a950796e451}*SharedItemsImports = 4
@@ -22,6 +24,9 @@ Global
 		Source\Mvvm\Mvvm.projitems*{09d64d83-c3a6-443d-af75-2a950796e451}*SharedItemsImports = 4
 		Source\Mvvm\Mvvm.projitems*{a147dbe5-a615-48ee-8a8a-f23220f5cec8}*SharedItemsImports = 13
 		Source\AppModel\AppModel.projitems*{aa0186dc-358a-465e-8294-e642d2635787}*SharedItemsImports = 13
+		Source\AppModel\AppModel.projitems*{b2b4c754-c941-4c6b-ac42-bf4474298146}*SharedItemsImports = 4
+		Source\AppViewModel\AppViewModel.projitems*{b2b4c754-c941-4c6b-ac42-bf4474298146}*SharedItemsImports = 4
+		Source\Mvvm\Mvvm.projitems*{b2b4c754-c941-4c6b-ac42-bf4474298146}*SharedItemsImports = 4
 		Source\AppViewModel\AppViewModel.projitems*{f25ff377-c3eb-45f0-b8c7-850c6ff5802a}*SharedItemsImports = 13
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,6 +42,10 @@ Global
 		{F04819FC-39C8-41C6-BB0E-BAF92662C9F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F04819FC-39C8-41C6-BB0E-BAF92662C9F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F04819FC-39C8-41C6-BB0E-BAF92662C9F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2B4C754-C941-4C6B-AC42-BF4474298146}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2B4C754-C941-4C6B-AC42-BF4474298146}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2B4C754-C941-4C6B-AC42-BF4474298146}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2B4C754-C941-4C6B-AC42-BF4474298146}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
