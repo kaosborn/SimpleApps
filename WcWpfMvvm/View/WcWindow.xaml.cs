@@ -4,7 +4,6 @@
 
 using System;
 using System.Windows;
-using System.Windows.Controls;
 using AppModel;
 using AppViewModel;
 
@@ -17,7 +16,11 @@ namespace AppView
             InitializeComponent();
         }
 
-        // This is deemed acceptable code-behind because it is application startup.
+        // MVVM purists say this file should contain no code-behind.
+        // However these application startup bits seem necessary here:
+        // - Spin up the model before the GUI for splash & status.
+        // - Initialize DataContext with an argument.
+        // - Process command line arguments.
         private void WcController_Loaded (object sender, RoutedEventArgs e)
         {
             WcPresenter presenter;
@@ -26,7 +29,7 @@ namespace AppView
             // This allows showing splash or status while model is spinning up.
             var model = new WcModel();
 
-            // DataContext can be created in XAML but only with the default constructor.
+            // Initialize DataContext here because it can't be created in XAML with an argument.
             DataContext = presenter = new WcPresenter (model);
 
             // Process command line arguments:

@@ -1,4 +1,4 @@
-﻿// WcWpfMvvm / ViewModel / WcPresenter.cs
+﻿// AppViewModel / WcPresenter.cs
 //
 
 using System;
