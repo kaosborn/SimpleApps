@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27130.2027
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29215.179
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcWpfMvvm", "WcWpfMvvm\WcWpfMvvm.csproj", "{09D64D83-C3A6-443D-AF75-2A950796E451}"
 EndProject
@@ -17,7 +17,7 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Mvvm", "Source\Mvvm\Mvvm.sh
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcMvvm461", "WcMvvm461\WcMvvm461.csproj", "{B2B4C754-C941-4C6B-AC42-BF4474298146}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test461", "Test461\Test461.csproj", "{60A4A00A-4E5B-420C-8434-C63B0CD9CB5A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test472", "Test472\Test472.csproj", "{6EA33131-74A3-4841-925D-00632CE5649A}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
@@ -48,10 +48,10 @@ Global
 		{B2B4C754-C941-4C6B-AC42-BF4474298146}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B2B4C754-C941-4C6B-AC42-BF4474298146}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B2B4C754-C941-4C6B-AC42-BF4474298146}.Release|Any CPU.Build.0 = Release|Any CPU
-		{60A4A00A-4E5B-420C-8434-C63B0CD9CB5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{60A4A00A-4E5B-420C-8434-C63B0CD9CB5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{60A4A00A-4E5B-420C-8434-C63B0CD9CB5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{60A4A00A-4E5B-420C-8434-C63B0CD9CB5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EA33131-74A3-4841-925D-00632CE5649A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EA33131-74A3-4841-925D-00632CE5649A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EA33131-74A3-4841-925D-00632CE5649A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EA33131-74A3-4841-925D-00632CE5649A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

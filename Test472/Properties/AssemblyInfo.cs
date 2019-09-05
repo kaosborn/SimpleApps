@@ -1,15 +1,14 @@
 using System.Reflection;
 using System.Runtime.InteropServices;
 
-[assembly: AssemblyTitle ("Test461")]
+[assembly: AssemblyTitle ("Test472")]
 [assembly: AssemblyDescription ("")]
 [assembly: AssemblyConfiguration ("")]
 [assembly: AssemblyCompany ("")]
 [assembly: AssemblyProduct ("SimpleApps")]
-[assembly: AssemblyCopyright ("Copyright © github.com/kaosborn 2018")]
+[assembly: AssemblyCopyright ("Copyright © kaosborn 2019")]
 [assembly: AssemblyTrademark ("freeware")]
 [assembly: AssemblyCulture ("")]
-
 [assembly: ComVisible (false)]
-[assembly: Guid ("60a4a00a-4e5b-420c-8434-c63b0cd9cb5a")]
-[assembly: AssemblyVersion ("0.1.0.0")]
+[assembly: Guid ("6ea33131-74a3-4841-925d-00632ce5649a")]
+[assembly: AssemblyVersion("0.1.0.0")]
