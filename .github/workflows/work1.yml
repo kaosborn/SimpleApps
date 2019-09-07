@@ -12,6 +12,6 @@ jobs:
     - name: Run a one-line script
       run: echo OS is %OS%
     - name: Run a multi-line script
-      run:
+      run: |
         echo do some tests
-        echo and maybe deploy
+        msbuild -version
