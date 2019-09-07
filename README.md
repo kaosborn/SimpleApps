@@ -21,3 +21,8 @@ Complete source code is hosted at GitHub:
 Building requires Visual Studio 2017 Community Edition or greater:
 
 * https://www.visualstudio.com/downloads/
+
+### Badges
+
+![](https://github.com/ksosborn/simpleapps/workflows/blank/badge.svg)
+![](https://github.com/ksosborn/simpleapps/workflows/work1/badge.svg)

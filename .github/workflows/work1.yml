@@ -1,0 +1,17 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Run a one-line script
+      run: echo OS is %OS%
+    - name: Run a multi-line script
+      run:
+        echo do some tests
+        echo and maybe deploy
