@@ -13,5 +13,7 @@ jobs:
       run: echo OS is %OS%
     - name: Run a multi-line script
       run: |
-        echo do some tests
-        msbuild -version
+        echo building
+        MSBuild.exe -version
+        echo testing
+        echo deploying
