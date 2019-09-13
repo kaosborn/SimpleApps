@@ -1,4 +1,4 @@
-name: CI1
+name: Workflow1
 
 on: [push]
 
@@ -16,6 +16,6 @@ jobs:
     - name: Run a multi-line script
       run: |
         echo building
-        MSBuild.exe -version
+        dotnet --version
         echo testing
         echo deploying
