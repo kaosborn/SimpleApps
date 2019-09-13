@@ -1,4 +1,4 @@
-name: CI
+name: CI1
 
 on: [push]
 
@@ -9,8 +9,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - name: Run a one-line script
+    - name: Get OS
       run: echo OS is %OS%
+    - name: Get PATH
+      run: echo %PATH%
     - name: Run a multi-line script
       run: |
         echo building
