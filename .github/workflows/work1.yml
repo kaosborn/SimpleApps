@@ -15,7 +15,18 @@ jobs:
       run: echo %PATH%
     - name: Run a multi-line script
       run: |
-        echo building
-        dotnet --version
-        echo testing
+        echo building debug
+        dotnet build WcMvvm461\WcMvvm461.csproj --configuration Debug -f netcoreapp2.1
+        dotnet build Test472\Test472.csproj --configuration Debug -f netcoreapp2.1
+        dotnet build WcWpfMvvm\WcWpfMvvm.csproj --configuration Debug -f netcoreapp2.1
+        echo test Debug
+        vstest.console Test472\bin\Debug\Test472.dll
+        echo building Release
+        dotnet build WcMvvm461\WcMvvm461.csproj -c Release -f netcoreapp2.1
+        dotnet build Test472\Test472.csproj -c Release -f netcoreapp2.1
+        dotnet build WcWpfMvvm\WcWpfMvvm.csproj -c Release -f netcoreapp2.1
+        echo test Release
+        dotnet vstest Test472\bin\Release\Test472.dll
         echo deploying
+        dotnet --version
+        where vstest.console.exe
