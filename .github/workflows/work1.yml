@@ -1,4 +1,4 @@
-name: Workflow1
+name: work1
 
 on: [push]
 
@@ -9,6 +9,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
+      uses: actions/setup-dotnet@v1
     - name: Get version
       run: dotnet --version
     - name: Get vars
