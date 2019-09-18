@@ -10,7 +10,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Get version
-        dotnet --version
+      run: dotnet --version
     - name: Get vars
       run: |
         echo OS is %OS%
