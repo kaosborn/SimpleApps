@@ -4,19 +4,18 @@ on: [push]
 
 jobs:
   build:
-
     runs-on: windows-latest
-
     steps:
     - uses: actions/checkout@v1
-      uses: actions/setup-dotnet@v1
     - name: Get version
       run: dotnet --version
     - name: Get vars
+    - uses: actions/setup-dotnet@v1
       run: |
         echo OS is %OS%
         echo PATH=%PATH%
     - name: Build, test, deploy
+      uses: actions/setup-dotnet@v1
       run: |
         echo building Debug
         msbuild -t:WcMvvm461 -p:Configuration=Debug -p:Platform="Any CPU"
