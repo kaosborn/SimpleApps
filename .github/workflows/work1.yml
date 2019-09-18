@@ -9,24 +9,25 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - name: Get OS
-      run: echo OS is %OS%
-    - name: Get PATH
-      run: echo %PATH%
-    - name: Run a multi-line script
+    - name: Get version
+        dotnet --version
+    - name: Get vars
       run: |
-        echo building debug
-        dotnet build WcMvvm461\WcMvvm461.csproj --configuration Debug -f netcoreapp2.1
-        dotnet build Test472\Test472.csproj --configuration Debug -f netcoreapp2.1
-        dotnet build WcWpfMvvm\WcWpfMvvm.csproj --configuration Debug -f netcoreapp2.1
-        echo test Debug
+        echo OS is %OS%
+        echo PATH=%PATH%
+    - name: Build, test, deploy
+      run: |
+        echo building Debug
+        msbuild -t:WcMvvm461 -p:Configuration=Debug -p:Platform="Any CPU"
+        msbuild -t:Test472 -p:Configuration=Debug -p:Platform="Any CPU"
+        echo testing Debug
         vstest.console Test472\bin\Debug\Test472.dll
         echo building Release
-        dotnet build WcMvvm461\WcMvvm461.csproj -c Release -f netcoreapp2.1
-        dotnet build Test472\Test472.csproj -c Release -f netcoreapp2.1
-        dotnet build WcWpfMvvm\WcWpfMvvm.csproj -c Release -f netcoreapp2.1
+        msbuild -t:WcWpfMvvm -p:Configuration=Debug -p:Platform="Any CPU"
+        msbuild -t:WcMvvm461 -p:Configuration=Release -p:Platform="Any CPU"
+        msbuild -t:Test472 -p:Configuration=Release -p:Platform="Any CPU"
+        msbuild -t:WcWpfMvvm -p:Configuration=Release -p:Platform="Any CPU"
         echo test Release
         dotnet vstest Test472\bin\Release\Test472.dll
         echo deploying
-        dotnet --version
         where vstest.console.exe
