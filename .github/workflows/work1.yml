@@ -11,9 +11,7 @@ jobs:
       run: dotnet --version
     - name: Get vars
       uses: actions/setup-dotnet@v1
-      run: |
-        echo OS is %OS%
-        echo PATH=%PATH%
+      run: echo PATH=%PATH%
     - name: Build, test, deploy
       run: |
         echo building Debug
