@@ -24,10 +24,14 @@ Building requires Visual Studio 2017 Community Edition or greater:
 
 ### Badges
 
-![](https://github.com/kaosborn/simpleapps/tree/master/.github/workflows/work1.yml/badge.svg)
-![](https://github.com/kaosborn/simpleapps/workflows/work1.yml/badge.svg)
+![](https://github.com/kaosborn/simpleapps/tree/master/.github/workflows/work1/badge.svg)
 
+![](https://github.com/kaosborn/simpleapps/workflows/work1/badge.svg)
 
-<p align="center">
+<p align="left">
   <a href="https://github.com/kaosborn/simpleapps"><img alt="Status" src="https://github.com/kaosborn/simpleapps/workflows/work1/badge.svg"></a>
+</p>
+
+<p align="left">
+<img alt="Status" src="https://github.com/kaosborn/simpleapps/workflows/work2/badge.svg">
 </p>
