@@ -1,0 +1,16 @@
+name: work2
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Build lib only
+      run: |
+        dotnet build WcMvvm461\WcMvvm461.csproj
+        dotnet --version
+        echo PATH=%PATH%
