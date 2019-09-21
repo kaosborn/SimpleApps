@@ -4,15 +4,14 @@ on: [push]
 
 jobs:
   build:
+
     runs-on: windows-latest
+
     steps:
     - uses: actions/checkout@v1
-    - name: Get version
-      run: dotnet --version
-    - name: Get vars
+    - name: Setup dotnet
       uses: actions/setup-dotnet@v1
-      run: echo PATH=%PATH%
-    - name: Build, test, deploy
+    - name: Build, test
       run: |
         echo building Debug
         msbuild -t:WcMvvm461 -p:Configuration=Debug -p:Platform="Any CPU"
@@ -27,4 +26,6 @@ jobs:
         echo test Release
         dotnet vstest Test472\bin\Release\Test472.dll
         echo deploying
+        dotnet --version
         where vstest.console.exe
+        echo PATH=%PATH%
