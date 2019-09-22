@@ -15,6 +15,7 @@ jobs:
         set PATH=%PATH%;"C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin"
         echo %PATH%
         msbuild -t:WcMvvm461 -p:Configuration=Debug -p:Platform="Any CPU"
+        dotnet restore
         msbuild -t:Test472 -p:Configuration=Debug -p:Platform="Any CPU"
         echo testing Debug
         vstest.console Test472\bin\Debug\Test472.dll
