@@ -28,5 +28,3 @@ jobs:
         dotnet vstest Test472\bin\Release\Test472.dll
         echo reporting
         dotnet --version
-        where vstest.console.exe
-        echo PATH=%PATH%
