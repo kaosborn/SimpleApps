@@ -16,6 +16,7 @@ jobs:
     - name: Build, test
       run: |
         echo building Debug
+        set PATH=%PATH%;C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise
         msbuild -t:WcMvvm461 -p:Configuration=Debug -p:Platform="Any CPU"
         msbuild -t:Test472 -p:Configuration=Debug -p:Platform="Any CPU"
         echo testing Debug
