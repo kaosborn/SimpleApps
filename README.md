@@ -26,6 +26,8 @@ Building requires Visual Studio 2017 Community Edition or greater:
 
 [](https://github.com/kaosborn/simpleapps/workflows/work1/badge.svg)
 
+![Test](https://github.com/kaosborn/simpleapps/workflows/test/badge.svg)
+
 ![Build](https://github.com/kaosborn/simpleapps/workflows/work2/badge.svg)
 
 <p align="left">
