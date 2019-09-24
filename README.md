@@ -27,8 +27,8 @@ Building requires Visual Studio 2017 Community Edition or greater:
 ![](https://github.com/kaosborn/simpleapps/workflows/Build/badge.svg)
 ![TEST](https://github.com/kaosborn/simpleapps/workflows/Test/badge.svg)
 
-<p align="left">
-  <a href="https://github.com/kaosborn/simpleapps"><img alt="Test" src="https://github.com/kaosborn/simpleapps/workflows/Test/badge.svg"></a>
+<p>
+  <a href="https://github.com/kaosborn/SimpleApps/blob/master/.github/workflows/Build.yml"><img alt="BUILD1" src="https://github.com/kaosborn/simpleapps/workflows/Build/badge.svg"></a>
 </p>
 
-  <img alt="Status" src="https://github.com/kaosborn/simpleapps/workflows/work2/badge.svg">
+  <a href="https://github.com/kaosborn/SimpleApps/blob/master/.github/workflows/Build.yml"><img alt="BUILD2" src="https://github.com/kaosborn/simpleapps/workflows/Build/badge.svg"></a>
