@@ -13,10 +13,8 @@ jobs:
         fetch-depth: 1
     - name: Test1
       run: |
-        call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Common7\Tools\VsDevCmd.bat"
+        call "%ProgramFiles(x86)%\Microsoft Visual Studio\2019\Enterprise\Common7\Tools\VsDevCmd.bat"
         dotnet restore
         msbuild -t:WcMvvm461 -p:Configuration=Debug -p:Platform="Any CPU"
         msbuild -t:Test472 -p:Configuration=Debug -p:Platform="Any CPU"
-        dotnet vstest Test472\bin\Debug\Test472.dll
-        echo COVERAGE
         vstest.console.exe Test472\bin\Debug\Test472.dll /EnableCodeCoverage
