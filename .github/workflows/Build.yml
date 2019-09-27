@@ -12,9 +12,11 @@ jobs:
         call "%ProgramFiles(x86)%\Microsoft Visual Studio\2019\Enterprise\Common7\Tools\VsDevCmd.bat"
         msbuild -t:WcMvvm461 -p:Configuration=Release -p:Platform="Any CPU"
         msbuild -t:WcWpfMvvm -p:Configuration=Release -p:Platform="Any CPU"
+    - name: Save results
+    - run: |
         mkdir BuildResults
         copy WcWpfMvvm\bin\Release\WcWpfMvvm.exe BuildResults
-    - name: Post build artifacts
+    - name: Post artifacts
       uses: actions/upload-artifact@v1
       with:
         name: BuildRunOutput
