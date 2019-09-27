@@ -5,22 +5,22 @@ on: [push]
 jobs:
   Test1:
 
-    runs-on: windows-2019
+    runs-on: windows-latest
 
     steps:
     - uses: actions/checkout@v1
       with:
         fetch-depth: 1
-    - name: Do test job
+    - name: Run test
       run: |
         call "%ProgramFiles(x86)%\Microsoft Visual Studio\2019\Enterprise\Common7\Tools\VsDevCmd.bat"
         dotnet restore
         msbuild -t:WcMvvm461 -p:Configuration=Debug -p:Platform="Any CPU"
         msbuild -t:Test472 -p:Configuration=Debug -p:Platform="Any CPU"
-        vstest.console.exe Test472\bin\Debug\Test472.dll /EnableCodeCoverage
-        set > vars.txt
-    - name: Do save results job
+        vstest.console.exe Test472\bin\Debug\Test472.dll /EnableCodeCoverage /logger:trx;LogFileName=CResults
+        set > TestResults\vars.txt
+    - name: Run post results
       uses: actions/upload-artifact@v1
       with:
-        name: Vars report
-        path: vars.txt
+        name: TestRunOutput
+        path: TestResults
