@@ -1,18 +1,21 @@
 name: Build
-
 on: [push]
-
 jobs:
-  build:
-
+  Build1:
     runs-on: windows-latest
-
     steps:
     - uses: actions/checkout@v1
       with:
         fetch-depth: 1
-    - name: Do job
+    - name: Run build
       run: |
         call "%ProgramFiles(x86)%\Microsoft Visual Studio\2019\Enterprise\Common7\Tools\VsDevCmd.bat"
         msbuild -t:WcMvvm461 -p:Configuration=Release -p:Platform="Any CPU"
         msbuild -t:WcWpfMvvm -p:Configuration=Release -p:Platform="Any CPU"
+        mkdir BuildResults
+        copy WcWpfMvvm\bin\Release\WcWpfMvvm.exe BuildResults
+    - name: Post build artifacts
+      uses: actions/upload-artifact@v1
+      with:
+        name: BuildRunOutput
+        path: BuildResults

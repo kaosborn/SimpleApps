@@ -1,12 +1,8 @@
 name: Test
-
 on: [push]
-
 jobs:
   Test1:
-
     runs-on: windows-latest
-
     steps:
     - uses: actions/checkout@v1
       with:
@@ -18,11 +14,10 @@ jobs:
         msbuild -t:WcMvvm461 -p:Configuration=Debug -p:Platform="Any CPU"
         msbuild -t:Test472 -p:Configuration=Debug -p:Platform="Any CPU"
         vstest.console Test472\bin\Debug\Test472.dll /EnableCodeCoverage /logger:trx;LogFileName=CResults.trx
+        CodeCoverage > TestResults\CC-Help.txt
     - name: Get environment
       run: set > TestResults\vars.txt
-    - name: Invoke CodeCoverage.exe
-      run: CodeCoverage /h > TestResults\CC-Help.txt
-    - name: Post artifacts
+    - name: Post test artifacts
       uses: actions/upload-artifact@v1
       with:
         name: TestRunOutput
