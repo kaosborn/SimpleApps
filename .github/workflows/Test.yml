@@ -13,9 +13,8 @@ jobs:
         dotnet restore
         msbuild -t:Test472 -p:Configuration=Debug -p:Platform="Any CPU"
     - name: Run tests
-        vstest.console Test472\bin\Debug\Test472.dll /EnableCodeCoverage /logger:trx;LogFileName=CResults.trx
+      run: vstest.console Test472\bin\Debug\Test472.dll /EnableCodeCoverage /logger:trx;LogFileName=CResults.trx
     - name: Save results
-    - name: Get environment
       run: |
         set > TestResults\vars.txt
         rem CodeCoverage > TestResults\CC-Help.txt

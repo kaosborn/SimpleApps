@@ -13,11 +13,10 @@ jobs:
         msbuild -t:WcMvvm461 -p:Configuration=Release -p:Platform="Any CPU"
         msbuild -t:WcWpfMvvm -p:Configuration=Release -p:Platform="Any CPU"
     - name: Save results
-    - run: |
+      run: |
         mkdir BuildResults
         copy WcWpfMvvm\bin\Release\WcWpfMvvm.exe BuildResults
-    - name: Post artifacts
-      uses: actions/upload-artifact@v1
+    - uses: actions/upload-artifact@v1
       with:
         name: BuildRunOutput
         path: BuildResults
