@@ -1,27 +1,25 @@
 name: Test
 on: [push]
 jobs:
-  Test1:
+  Job1:
     runs-on: windows-latest
     steps:
     - uses: actions/checkout@v1
       with:
         fetch-depth: 1
-    - name: Build for test
+    - name: Run build
       run: |
         call "%ProgramFiles(x86)%\Microsoft Visual Studio\2019\Enterprise\Common7\Tools\VsDevCmd.bat"
         dotnet restore
         msbuild -t:Test472 -p:Configuration=Debug -p:Platform="Any CPU"
-    - name: Run tests
+    - name: Run test
       run: |
         call "%ProgramFiles(x86)%\Microsoft Visual Studio\2019\Enterprise\Common7\Tools\VsDevCmd.bat"
         vstest.console Test472\bin\Debug\Test472.dll /EnableCodeCoverage /logger:trx;LogFileName=CResults.trx
-        CodeCoverage
     - name: Save results
       run: |
         set > TestResults\vars.txt
-    - name: Post test artifacts
-      uses: actions/upload-artifact@v1
+    - uses: actions/upload-artifact@v1
       with:
         name: TestRunOutput
         path: TestResults
