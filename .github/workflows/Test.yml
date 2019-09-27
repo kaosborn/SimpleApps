@@ -22,4 +22,5 @@ jobs:
     - name: Do save results job
         uses: actions/upload-artifact@v1
         with:
+          name: Vars report
           path: vars.txt
