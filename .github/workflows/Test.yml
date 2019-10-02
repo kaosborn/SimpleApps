@@ -1,5 +1,5 @@
 name: Test
-on: [push]
+on: push
 jobs:
   Job1:
     runs-on: windows-latest
@@ -11,14 +11,18 @@ jobs:
       run: |
         call "%ProgramFiles(x86)%\Microsoft Visual Studio\2019\Enterprise\Common7\Tools\VsDevCmd.bat"
         dotnet restore
+        dotnet add Test472 package Microsoft.CodeCoverage
+        dotnet add Test472 package ReportGenerator
         msbuild -t:Test472 -p:Configuration=Debug -p:Platform="Any CPU"
     - name: Run test
       run: |
         call "%ProgramFiles(x86)%\Microsoft Visual Studio\2019\Enterprise\Common7\Tools\VsDevCmd.bat"
         vstest.console Test472\bin\Debug\Test472.dll /EnableCodeCoverage /logger:trx;LogFileName=CResults.trx
-    - name: Save results
+    - name: Generate coverage reports
       run: |
-        set > TestResults\vars.txt
+        call "%ProgramFiles(x86)%\Microsoft Visual Studio\2019\Enterprise\Common7\Tools\VsDevCmd.bat"
+        CodeCoverage analyze -output:ccov.coveragexml TestRunOutput\CResults.trx
+        ReportGenerator.dll -reports:ccov.coveragexml -targetdir:TestResults
     - uses: actions/upload-artifact@v1
       with:
         name: TestRunOutput
