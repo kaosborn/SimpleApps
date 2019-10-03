@@ -17,15 +17,16 @@ jobs:
     - name: Run test suite
       run: |
         call "%ProgramFiles(x86)%\Microsoft Visual Studio\2019\Enterprise\Common7\Tools\VsDevCmd.bat"
-        vstest.console Test472\bin\Debug\Test472.dll /EnableCodeCoverage /logger:trx;LogFileName=Coverage.trx
+        mkdir TestResults
+        "%VSINSTALLDIR%\Team Tools\Dynamic Code Coverage Tools\CodeCoverage" collect -output:TestResults\simple.coverage "%VSINSTALLDIR%\Common7\IDE\CommonExtensions\Microsoft\TestWindow\vstest.console" Test472\bin\Debug\Test472.dll
     - name: Run coverage analysis
       run: |
         call "%ProgramFiles(x86)%\Microsoft Visual Studio\2019\Enterprise\Common7\Tools\VsDevCmd.bat"
         echo *** Invoking CodeCoverage ***
-        "%USERPROFILE%\.nuget\packages\microsoft.codecoverage\16.3.0\build\netstandard1.0\CodeCoverage\CodeCoverage" analyze -output:TestResults\simple.coveragexml TestResults\Coverage.trx
-        @rem echo *** Invoking ReportGenerator ***
-        @rem dotnet "%USERPROFILE%\.nuget\packages\reportgenerator\4.3.0\tools\netcoreapp2.1\ReportGenerator.dll" -reports:TestResults\simple.coveragexml -targetdir:TestResults
+        "%USERPROFILE%\.nuget\packages\microsoft.codecoverage\16.3.0\build\netstandard1.0\CodeCoverage\CodeCoverage" analyze -output:TestResults\simple.coveragexml TestResults\simple.coverage
+        echo *** Invoking ReportGenerator ***
+        dotnet "%USERPROFILE%\.nuget\packages\reportgenerator\4.3.0\tools\netcoreapp2.1\ReportGenerator.dll" -reports:TestResults\simple.coveragexml -targetdir:TestResults\CoverageReport
     - uses: actions/upload-artifact@v1
       with:
-        name: TestRunOutput
+        name: RunnerOutput
         path: TestResults
