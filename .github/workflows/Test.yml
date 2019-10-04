@@ -26,5 +26,9 @@ jobs:
         dotnet "%USERPROFILE%\.nuget\packages\reportgenerator\4.3.0\tools\netcoreapp2.1\ReportGenerator.dll" -reports:TestResults\simple.coveragexml -targetdir:TestResults\CoverageReport
     - uses: actions/upload-artifact@v1
       with:
-        name: RunnerOutput
-        path: TestResults/*
+        name: RunnerOutput-All
+        path: TestResults
+    - uses: actions/upload-artifact@v1
+      with:
+        name: KaosCollections-CoverageReport
+        path: TestResults/CoverageReport
