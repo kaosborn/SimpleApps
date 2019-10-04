@@ -10,14 +10,13 @@ jobs:
     - name: Build test suite
       run: |
         call "%ProgramFiles(x86)%\Microsoft Visual Studio\2019\Enterprise\Common7\Tools\VsDevCmd.bat"
-        dotnet restore
         dotnet add Test472 package -v 16.3.0 Microsoft.CodeCoverage
         dotnet add Test472 package -v 4.3.0 ReportGenerator
         msbuild -t:Test472 -p:Configuration=Debug -p:Platform="Any CPU"
     - name: Run test suite
       run: |
         call "%ProgramFiles(x86)%\Microsoft Visual Studio\2019\Enterprise\Common7\Tools\VsDevCmd.bat"
-        mkdir TestResults\SimpleApps-CoverageReport\Data
+        mkdir TestResults\SimpleApps-CoverageReport
         "%VSINSTALLDIR%\Team Tools\Dynamic Code Coverage Tools\CodeCoverage" collect -output:TestResults\simple.coverage "%VSINSTALLDIR%\Common7\IDE\CommonExtensions\Microsoft\TestWindow\vstest.console" Test472\bin\Debug\Test472.dll
     - name: Run coverage analysis
       run: |
