@@ -17,20 +17,20 @@ jobs:
     - name: Run test suite
       run: |
         call "%ProgramFiles(x86)%\Microsoft Visual Studio\2019\Enterprise\Common7\Tools\VsDevCmd.bat"
-        mkdir TestResults\CoverageReport\Data
-        "%VSINSTALLDIR%\Team Tools\Dynamic Code Coverage Tools\CodeCoverage" collect -output:TestResults\CoverageReport\Data\simple.coverage "%VSINSTALLDIR%\Common7\IDE\CommonExtensions\Microsoft\TestWindow\vstest.console" Test472\bin\Debug\Test472.dll
+        mkdir TestResults\SimpleApps-CoverageReport\Data
+        "%VSINSTALLDIR%\Team Tools\Dynamic Code Coverage Tools\CodeCoverage" collect -output:TestResults\SimpleApps-CoverageReport\Data\simple.coverage "%VSINSTALLDIR%\Common7\IDE\CommonExtensions\Microsoft\TestWindow\vstest.console" Test472\bin\Debug\Test472.dll
     - name: Run coverage analysis
       run: |
         call "%ProgramFiles(x86)%\Microsoft Visual Studio\2019\Enterprise\Common7\Tools\VsDevCmd.bat"
         echo running CC
-        "%USERPROFILE%\.nuget\packages\microsoft.codecoverage\16.3.0\build\netstandard1.0\CodeCoverage\CodeCoverage" analyze -output:TestResults\CoverageReport\Data\simple.coveragexml TestResults\CoverageReport\Data\simple.coverage
+        "%USERPROFILE%\.nuget\packages\microsoft.codecoverage\16.3.0\build\netstandard1.0\CodeCoverage\CodeCoverage" analyze -output:TestResults\SimpleApps-CoverageReport\Data\simple.coveragexml TestResults\SimpleApps-CoverageReport\Data\simple.coverage
         echo running RG
-        dotnet "%USERPROFILE%\.nuget\packages\reportgenerator\4.3.0\tools\netcoreapp2.1\ReportGenerator.dll" -reports:TestResults\CoverageReport\Data\simple.coveragexml -targetdir:TestResults\CoverageReport
+        dotnet "%USERPROFILE%\.nuget\packages\reportgenerator\4.3.0\tools\netcoreapp2.1\ReportGenerator.dll" -reports:TestResults\SimpleApps-CoverageReport\Data\simple.coveragexml -targetdir:TestResults\SimpleApps-CoverageReport
     - uses: actions/upload-artifact@v1
       with:
         name: RunnerOutput-All
         path: TestResults
     - uses: actions/upload-artifact@v1
       with:
-        name: KaosCollections-CoverageReport
-        path: TestResults/CoverageReport
+        name: RunnerOutput-Coverage
+        path: TestResults/SimpleApps-CoverageReport
