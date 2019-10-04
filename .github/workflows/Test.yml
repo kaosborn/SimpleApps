@@ -22,7 +22,9 @@ jobs:
     - name: Run coverage analysis
       run: |
         call "%ProgramFiles(x86)%\Microsoft Visual Studio\2019\Enterprise\Common7\Tools\VsDevCmd.bat"
-        "%USERPROFILE%\.nuget\packages\microsoft.codecoverage\16.3.0\build\netstandard1.0\CodeCoverage\CodeCoverage" analyze -output:TestResults\simple.coveragexml TestResults\CoverageReport\Data\simple.coverage
+        echo running CC
+        "%USERPROFILE%\.nuget\packages\microsoft.codecoverage\16.3.0\build\netstandard1.0\CodeCoverage\CodeCoverage" analyze -output:TestResults\CoverageReport\Data\simple.coveragexml TestResults\CoverageReport\Data\simple.coverage
+        echo running RG
         dotnet "%USERPROFILE%\.nuget\packages\reportgenerator\4.3.0\tools\netcoreapp2.1\ReportGenerator.dll" -reports:TestResults\CoverageReport\Data\simple.coveragexml -targetdir:TestResults\CoverageReport
     - uses: actions/upload-artifact@v1
       with:
