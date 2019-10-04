@@ -18,12 +18,12 @@ jobs:
       run: |
         call "%ProgramFiles(x86)%\Microsoft Visual Studio\2019\Enterprise\Common7\Tools\VsDevCmd.bat"
         mkdir TestResults\SimpleApps-CoverageReport\Data
-        "%VSINSTALLDIR%\Team Tools\Dynamic Code Coverage Tools\CodeCoverage" collect -output:TestResults\SimpleApps-CoverageReport\Data\simple.coverage "%VSINSTALLDIR%\Common7\IDE\CommonExtensions\Microsoft\TestWindow\vstest.console" Test472\bin\Debug\Test472.dll
+        "%VSINSTALLDIR%\Team Tools\Dynamic Code Coverage Tools\CodeCoverage" collect -output:TestResults\simple.coverage "%VSINSTALLDIR%\Common7\IDE\CommonExtensions\Microsoft\TestWindow\vstest.console" Test472\bin\Debug\Test472.dll
     - name: Run coverage analysis
       run: |
         call "%ProgramFiles(x86)%\Microsoft Visual Studio\2019\Enterprise\Common7\Tools\VsDevCmd.bat"
         echo running CC
-        "%USERPROFILE%\.nuget\packages\microsoft.codecoverage\16.3.0\build\netstandard1.0\CodeCoverage\CodeCoverage" analyze -output:TestResults\SimpleApps-CoverageReport\Data\simple.coveragexml TestResults\SimpleApps-CoverageReport\Data\simple.coverage
+        "%USERPROFILE%\.nuget\packages\microsoft.codecoverage\16.3.0\build\netstandard1.0\CodeCoverage\CodeCoverage" analyze -output:TestResults\SimpleApps-CoverageReport\Data\simple.coveragexml TestResults\simple.coverage
         echo running RG
         dotnet "%USERPROFILE%\.nuget\packages\reportgenerator\4.3.0\tools\netcoreapp2.1\ReportGenerator.dll" -reports:TestResults\SimpleApps-CoverageReport\Data\simple.coveragexml -targetdir:TestResults\SimpleApps-CoverageReport
     - uses: actions/upload-artifact@v1
