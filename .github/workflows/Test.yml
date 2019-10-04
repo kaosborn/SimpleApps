@@ -27,4 +27,4 @@ jobs:
     - uses: actions/upload-artifact@v1
       with:
         name: RunnerOutput
-        path: TestResults/**
+        path: TestResults/*
