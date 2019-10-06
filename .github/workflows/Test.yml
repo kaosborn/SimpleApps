@@ -10,17 +10,19 @@ jobs:
     - name: Build test suite
       run: |
         call "%ProgramFiles(x86)%\Microsoft Visual Studio\2019\Enterprise\Common7\Tools\VsDevCmd.bat"
+        md TestResults\SimpleApps-CoverageReport
         dotnet add Test472 package -v 4.3.0 ReportGenerator
         msbuild -t:Test472 -p:Configuration=Debug -p:Platform="Any CPU"
     - name: Run test suite
       run: |
         call "%ProgramFiles(x86)%\Microsoft Visual Studio\2019\Enterprise\Common7\Tools\VsDevCmd.bat"
-        mkdir TestResults\SimpleApps-CoverageReport
-        "%VSINSTALLDIR%\Team Tools\Dynamic Code Coverage Tools\CodeCoverage" collect -output:TestResults\simple.coverage vstest.console Test472\bin\Debug\Test472.dll
+        vstest.console Test472\bin\Debug\Test472.dll
     - name: Run coverage analysis
       run: |
         call "%ProgramFiles(x86)%\Microsoft Visual Studio\2019\Enterprise\Common7\Tools\VsDevCmd.bat"
-        echo running CC
+        echo collecting
+        "%VSINSTALLDIR%\Team Tools\Dynamic Code Coverage Tools\CodeCoverage" collect -output:TestResults\simple.coverage Test472\bin\Debug\Test472.dll
+        echo analyzing
         "%VSINSTALLDIR%\Team Tools\Dynamic Code Coverage Tools\CodeCoverage" analyze -output:TestResults\simple.coveragexml TestResults\simple.coverage
         echo running RG
         dotnet "%USERPROFILE%\.nuget\packages\reportgenerator\4.3.0\tools\netcoreapp2.1\ReportGenerator.dll" -reports:TestResults\simple.coveragexml -targetdir:TestResults\SimpleApps-CoverageReport
