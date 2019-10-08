@@ -12,7 +12,7 @@ jobs:
         call "%ProgramFiles(x86)%\Microsoft Visual Studio\2019\Enterprise\Common7\Tools\VsDevCmd.bat"
         "%VSINSTALLDIR%\Common7\IDE\CommonExtensions\Microsoft\VSI\DisableOutOfProcBuild\DisableOutOfProcBuild"
         md BuildResults\SimpleApps-Release
-     - name: Run build
+    - name: Run build
       run: |
         call "%ProgramFiles(x86)%\Microsoft Visual Studio\2019\Enterprise\Common7\Tools\VsDevCmd.bat"
         msbuild -t:WcMvvm461 -p:Configuration=Release -p:Platform="Any CPU"
