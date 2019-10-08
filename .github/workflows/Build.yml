@@ -13,6 +13,8 @@ jobs:
         "%VSINSTALLDIR%\Common7\IDE\CommonExtensions\Microsoft\VSI\DisableOutOfProcBuild\DisableOutOfProcBuild"
         tree "%VSINSTALLDIR%\Common7\IDE\CommonExtensions\Microsoft" /A
         md BuildResults\SimpleApps-Release
+        cd "%VSINSTALLDIR%"
+        dir /s DisableOutOfProcBuild.*
     - name: Run build
       run: |
         call "%ProgramFiles(x86)%\Microsoft Visual Studio\2019\Enterprise\Common7\Tools\VsDevCmd.bat"
