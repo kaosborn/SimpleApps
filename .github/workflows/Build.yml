@@ -1,5 +1,5 @@
 name: Build
-on: [push]
+on: push
 jobs:
   Job1:
     runs-on: windows-latest
@@ -7,16 +7,20 @@ jobs:
     - uses: actions/checkout@v1
       with:
         fetch-depth: 1
-    - name: Run build
+    - name: Initialize
+      run: |
+        call "%ProgramFiles(x86)%\Microsoft Visual Studio\2019\Enterprise\Common7\Tools\VsDevCmd.bat"
+        "%VSINSTALLDIR%\Common7\IDE\CommonExtensions\Microsoft\VSI\DisableOutOfProcBuild\DisableOutOfProcBuild"
+        md BuildResults\SimpleApps-Release
+     - name: Run build
       run: |
         call "%ProgramFiles(x86)%\Microsoft Visual Studio\2019\Enterprise\Common7\Tools\VsDevCmd.bat"
         msbuild -t:WcMvvm461 -p:Configuration=Release -p:Platform="Any CPU"
         msbuild -t:WcWpfMvvm -p:Configuration=Release -p:Platform="Any CPU"
     - name: Store results
       run: |
-        mkdir BuildResults
-        copy WcWpfMvvm\bin\Release\WcWpfMvvm.exe BuildResults
+        copy WcWpfMvvm\bin\Release\WcWpfMvvm.exe BuildResults\SimpleApps-Release
     - uses: actions/upload-artifact@v1
       with:
-        name: BuildRunOutput
-        path: BuildResults
+        name: RunnerOutput-Release
+        path: BuildResults\SimpleApps-Release
