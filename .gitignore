@@ -260,4 +260,5 @@ paket-files/
 __pycache__/
 *.pyc
 /.axoCover
-/Help/SimpleApps-Help
+/Help/SimpleApps-Help/
+/BuildResults/
