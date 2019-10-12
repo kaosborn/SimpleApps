@@ -11,15 +11,20 @@ jobs:
       run: |
         call "%ProgramFiles(x86)%\Microsoft Visual Studio\2019\Enterprise\Common7\Tools\VsDevCmd.bat"
         md BuildResults\SimpleApps-Release
-    - name: Run build
+    - name: build libraries
       run: |
         call "%ProgramFiles(x86)%\Microsoft Visual Studio\2019\Enterprise\Common7\Tools\VsDevCmd.bat"
+        dotnet restore
         msbuild -t:WcMvvm461 -p:Configuration=Release -p:Platform="Any CPU"
-        msbuild -t:WcWpfMvvm -p:Configuration=Release -p:Platform="Any CPU"
         msbuild -t:TrivialMvvm -p:Configuration=Release -p:Platform="Any CPU"
+        copy TrivialMvvm\bin\Release\*.nupkg BuildResults\SimpleApps-Release
+    - name: build executables
+      run: |
+        call "%ProgramFiles(x86)%\Microsoft Visual Studio\2019\Enterprise\Common7\Tools\VsDevCmd.bat"
+        msbuild -t:WcWpfMvvm -p:Configuration=Release -p:Platform="Any CPU"
+        copy WcWpfMvvm\bin\Release\WcWpfMvvm.exe BuildResults\SimpleApps-Release
     - name: Store results
       run: |
-        copy WcWpfMvvm\bin\Release\WcWpfMvvm.exe BuildResults\SimpleApps-Release
     - name: Build documentation
       run: |
         call "%ProgramFiles(x86)%\Microsoft Visual Studio\2019\Enterprise\Common7\Tools\VsDevCmd.bat"
