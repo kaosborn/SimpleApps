@@ -74,6 +74,10 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|Win32' ">
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="EWSoftware.SHFB" Version="2019.9.15" />
+    <PackageReference Include="EWSoftware.SHFB.NETFramework" Version="4.8" />
+  </ItemGroup>
+  <ItemGroup>
     <Folder Include="Content" />
     <Folder Include="Content\VersionHistory" />
     <Folder Include="icons" />
