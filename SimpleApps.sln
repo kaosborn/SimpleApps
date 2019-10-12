@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcMvvm461", "WcMvvm461\WcMv
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test472", "Test472\Test472.csproj", "{6EA33131-74A3-4841-925D-00632CE5649A}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrivialMvvm", "TrivialMvvm\TrivialMvvm.csproj", "{7B733283-EAC1-46F5-8F58-85CF15D1D933}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		Source\AppModel\AppModel.projitems*{09d64d83-c3a6-443d-af75-2a950796e451}*SharedItemsImports = 4
@@ -52,6 +54,10 @@ Global
 		{6EA33131-74A3-4841-925D-00632CE5649A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6EA33131-74A3-4841-925D-00632CE5649A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6EA33131-74A3-4841-925D-00632CE5649A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B733283-EAC1-46F5-8F58-85CF15D1D933}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B733283-EAC1-46F5-8F58-85CF15D1D933}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B733283-EAC1-46F5-8F58-85CF15D1D933}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B733283-EAC1-46F5-8F58-85CF15D1D933}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
