@@ -10,19 +10,21 @@ jobs:
     - name: Initialize
       run: |
         call "%ProgramFiles(x86)%\Microsoft Visual Studio\2019\Enterprise\Common7\Tools\VsDevCmd.bat"
-        "%VSINSTALLDIR%\Common7\IDE\CommonExtensions\Microsoft\VSI\DisableOutOfProcBuild\DisableOutOfProcBuild"
-        tree "%VSINSTALLDIR%\Common7\IDE\CommonExtensions\Microsoft" /A
         md BuildResults\SimpleApps-Release
-        cd "%VSINSTALLDIR%"
-        dir /s DisableOutOfProcBuild.*
     - name: Run build
       run: |
         call "%ProgramFiles(x86)%\Microsoft Visual Studio\2019\Enterprise\Common7\Tools\VsDevCmd.bat"
         msbuild -t:WcMvvm461 -p:Configuration=Release -p:Platform="Any CPU"
         msbuild -t:WcWpfMvvm -p:Configuration=Release -p:Platform="Any CPU"
+        msbuild -t:TrivialMvvm -p:Configuration=Release -p:Platform="Any CPU"
     - name: Store results
       run: |
         copy WcWpfMvvm\bin\Release\WcWpfMvvm.exe BuildResults\SimpleApps-Release
+    - name: Build documentation
+      run: |
+        call "%ProgramFiles(x86)%\Microsoft Visual Studio\2019\Enterprise\Common7\Tools\VsDevCmd.bat"
+        msbuild -p:Configuration=Release Help\Help.shfbproj
+        copy Help\SimpleApps-Help\*.chm BuildResults\SimpleApps-Release
     - uses: actions/upload-artifact@v1
       with:
         name: RunnerOutput-Release
