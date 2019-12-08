@@ -1,0 +1,24 @@
+name: Build-Docs
+on: push
+jobs:
+  Job1:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v1
+      with:
+        fetch-depth: 1
+    - name: Build library
+      run: |
+        call "%ProgramFiles(x86)%\Microsoft Visual Studio\2019\Enterprise\Common7\Tools\VsDevCmd.bat"
+        md BuildResults\SimpleApps-Docs
+        dotnet restore
+        msbuild -t:SimpleApps -p:Configuration=Release -p:Platform="Any CPU"
+    - name: Build documentation
+      run: |
+        call "%ProgramFiles(x86)%\Microsoft Visual Studio\2019\Enterprise\Common7\Tools\VsDevCmd.bat"
+        msbuild -p:Configuration=Release -p:Platform="Any CPU" Help
+        copy Help\SimpleApps-Help\ BuildResults\SimpleApps-Docs
+    - uses: actions/upload-artifact@v1
+      with:
+        name: RunnerOutput-Docs
+        path: BuildResults\SimpleApps-Docs
