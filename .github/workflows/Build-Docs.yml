@@ -10,6 +10,7 @@ jobs:
     - name: Build library
       run: |
         md BuildResults\SimpleApps-Docs
+        set > BuildResults\SimpleApps-Docs\vars0.txt
         dotnet restore
         msbuild -t:SimpleApps -p:Configuration=Release -p:Platform="Any CPU"
     - name: Build documentation
