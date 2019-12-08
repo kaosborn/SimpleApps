@@ -9,7 +9,6 @@ jobs:
         fetch-depth: 1
     - name: Initialize
       run: |
-        call "%ProgramFiles(x86)%\Microsoft Visual Studio\2019\Enterprise\Common7\Tools\VsDevCmd.bat"
         md BuildResults\SimpleApps-Release
     - name: build libraries
       run: |
