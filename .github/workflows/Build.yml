@@ -13,18 +13,17 @@ jobs:
     - name: build libraries
       run: |
         dotnet restore
-        "%ProgramFiles(x86)%\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\MSBuild" -t:WcMvvm461 -p:Configuration=Release -p:Platform="Any CPU"
-        "%ProgramFiles(x86)%\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\MSBuild" -t:TrivialMvvm -p:Configuration=Release -p:Platform="Any CPU"
+        "%ProgramFiles(x86)%\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\MSBuild" -p:Configuration=Release -p:Platform="Any CPU" WcMvvm461
+        "%ProgramFiles(x86)%\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\MSBuild" -p:Configuration=Release -p:Platform="Any CPU" TrivialMvvm
         copy TrivialMvvm\bin\Release\*.nupkg BuildResults\SimpleApps-Release
     - name: build executables
       run: |
-        "%ProgramFiles(x86)%\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\MSBuild" -t:WcWpfMvvm -p:Configuration=Release -p:Platform="Any CPU"
+        "%ProgramFiles(x86)%\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\MSBuild" -p:Configuration=Release -p:Platform="Any CPU" WcWpfMvvm
         copy WcWpfMvvm\bin\Release\WcWpfMvvm.exe BuildResults\SimpleApps-Release
     - name: Store results
       run: |
     - name: Build documentation
       run: |
-        call "%ProgramFiles(x86)%\Microsoft Visual Studio\2019\Enterprise\Common7\Tools\VsDevCmd.bat"
         "%ProgramFiles(x86)%\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\MSBuild" -p:Configuration=Release Help\Help.shfbproj
         copy Help\SimpleApps-Help\*.chm BuildResults\SimpleApps-Release
     - uses: actions/upload-artifact@v1

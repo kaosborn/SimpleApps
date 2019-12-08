@@ -10,7 +10,7 @@ jobs:
     - name: Build library
       run: |
         md BuildResults\SimpleApps-Docs
-        dir "%ProgramFiles(x86)%\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin" > BuildResults\SimpleApps-Docs\Bin0.txt
+        dir "%ProgramFiles(x86)%\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\" > BuildResults\SimpleApps-Docs\Bin0.txt
         dotnet restore
         msbuild -t:SimpleApps -p:Configuration=Release -p:Platform="Any CPU"
     - name: Build documentation
