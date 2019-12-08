@@ -9,13 +9,11 @@ jobs:
         fetch-depth: 1
     - name: Build library
       run: |
-        "%ProgramFiles(x86)%\Microsoft Visual Studio\2019\Enterprise\Common7\Tools\VsDevCmd.bat"
         md BuildResults\SimpleApps-Docs
         dotnet restore
         msbuild -t:SimpleApps -p:Configuration=Release -p:Platform="Any CPU"
     - name: Build documentation
       run: |
-        "%ProgramFiles(x86)%\Microsoft Visual Studio\2019\Enterprise\Common7\Tools\VsDevCmd.bat"
         msbuild -p:Configuration=Release -p:Platform="Any CPU" Help
         copy Help\SimpleApps-Help\ BuildResults\SimpleApps-Docs
     - uses: actions/upload-artifact@v1
