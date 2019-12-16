@@ -10,6 +10,7 @@ jobs:
     - name: Initialize
       run: |
         md BuildResults\SimpleApps-Release
+        msbuild -version
     - name: build libraries
       run: |
         dotnet restore
