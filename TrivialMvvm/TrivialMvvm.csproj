@@ -6,7 +6,8 @@
     <Version>0.1.0</Version>
     <Authors>Kasey O.</Authors>
     <Company>github.com/kaosborn</Company>
-    <Description>work in progress</Description>
+    <Description>developer sandbox - not meant for consumption</Description>
+    <RepositoryUrl>https://github.com/kaosborn/simpleapps</RepositoryUrl>
   </PropertyGroup>
 
 </Project>
