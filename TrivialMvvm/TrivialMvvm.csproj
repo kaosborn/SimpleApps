@@ -3,11 +3,15 @@
   <PropertyGroup>
     <TargetFrameworks>netstandard1.6;net45</TargetFrameworks>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>0.1.0</Version>
+    <Version>0.1.4</Version>
     <Authors>Kasey O.</Authors>
     <Company>github.com/kaosborn</Company>
     <Description>developer sandbox - not meant for consumption</Description>
     <RepositoryUrl>https://github.com/kaosborn/simpleapps</RepositoryUrl>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
 
 </Project>
