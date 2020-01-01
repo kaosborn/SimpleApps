@@ -12,7 +12,6 @@ jobs:
         md BuildResults\SimpleApps-Docs
         cd
         dir
-        echo %ProgramFiles(x86)%
         set
         dir "%ProgramFiles(x86)%\Microsoft Visual Studio" > BuildResults\SimpleApps-Docs\Bin4.txt
         dir "%ProgramFiles(x86)%\Microsoft Visual Studio\2019" > BuildResults\SimpleApps-Docs\Bin3.txt
@@ -21,6 +20,7 @@ jobs:
         dir "%ProgramFiles(x86)%\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\" > BuildResults\SimpleApps-Docs\Bin0.txt
         dotnet restore
         msbuild -t:SimpleApps -p:Configuration=Release -p:Platform="Any CPU"
+      shell: cmd
     - name: Build documentation
       run: |
         msbuild -p:Configuration=Release -p:Platform="Any CPU" Help

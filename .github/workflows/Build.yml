@@ -7,6 +7,9 @@ jobs:
     - uses: actions/checkout@v1
       with:
         fetch-depth: 1
+    - uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '3.1.100'
     - name: Initialize
       run: |
         md BuildResults\SimpleApps-Release
