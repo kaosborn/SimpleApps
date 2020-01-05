@@ -9,6 +9,7 @@ jobs:
         fetch-depth: 1
     - name: Initialize
       run: |
+        mkdir BuildResults
         mkdir BuildResults\SimpleApps-Debug
     - name: Build library
       run: |

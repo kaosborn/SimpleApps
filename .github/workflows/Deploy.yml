@@ -12,6 +12,7 @@ jobs:
         dotnet-version: '3.1.100'
     - name: Initialize
       run: |
+        mkdir BuildResults
         mkdir BuildResults/SimpleApps-Release
     - name: build library
       run: |
