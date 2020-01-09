@@ -15,7 +15,7 @@ jobs:
       run: |
         dotnet restore
         dotnet build -c Debug TrivialMvvm
-        copy TrivialMvvm\bin\Release\*.nupkg BuildResults\SimpleApps-Debug
+        copy TrivialMvvm\bin\Debug\*.nupkg BuildResults\SimpleApps-Debug
     - name: Build standard suite
       run: |
         dotnet restore TestCore
