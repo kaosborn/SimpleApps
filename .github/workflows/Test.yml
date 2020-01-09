@@ -14,14 +14,14 @@ jobs:
     - name: Build library
       run: |
         dotnet restore
-        dotnet build -c Debug TrivialMvvm
+        dotnet msbuild -nologo -p:Platform="Any CPU" -p:Configuration=Debug TrivialMvvm
         copy TrivialMvvm\bin\Debug\*.nupkg BuildResults\SimpleApps-Debug
     - name: Build standard suite
       run: |
         dotnet restore TestCore
-        dotnet build -c Debug TestCore
+        dotnet msbuild -nologo -p:Platform="Any CPU" -p:Configuration=Debug TestCore
     - name: Run standard suite
-      run: dotnet test TestCore
+      run: dotnet test -c Debug TestCore
     - uses: actions/upload-artifact@v1
       with:
         name: RunnerOutput-Debug

@@ -17,8 +17,14 @@ jobs:
     - name: build library
       run: |
         dotnet restore
-        dotnet build -c Release TrivialMvvm
+        dotnet msbuild -nologo -restore -p:Configuration=Release TrivialMvvm
         cp TrivialMvvm/bin/Release/*.nupkg BuildResults/SimpleApps-Release
+    - name: build standard suite (Release)
+      run: |
+        dotnet msbuild -nologo -p:Platform="Any CPU" -p:Configuration=Release TestCore
+    - name: run standard suite (Release)
+      run: |
+        dotnet test -c Release TestCore
     - uses: actions/upload-artifact@v1
       with:
         name: RunnerOutput-Release
