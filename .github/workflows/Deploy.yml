@@ -21,7 +21,7 @@ jobs:
         cp TrivialMvvm/bin/Release/*.nupkg BuildResults/SimpleApps-Release
     - name: build standard suite (Release)
       run: |
-        dotnet msbuild -nologo -p:Platform="Any CPU" -p:Configuration=Release TestCore
+        dotnet msbuild -nologo -p:Configuration=Release TestCore
     - name: run standard suite (Release)
       run: |
         dotnet test -c Release TestCore
